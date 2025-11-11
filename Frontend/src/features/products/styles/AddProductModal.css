@@ -1,0 +1,97 @@
+/* -------- Add Product Modal (scoped) -------- */
+:root {
+  --add-bg: #f6f6f6;
+  --add-text: #1a1a1a;
+  --add-muted: #6b6b6b;
+  --add-radius-xl: 28px;
+  --add-radius-lg: 16px;
+  --add-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --add-primary: #111;            /* black button */
+  --add-primary-text: #fff;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Scope to only this modal */
+.rms-add-modal .modal-content {
+  background: var(--add-bg);
+  border: 0;
+  border-radius: var(--add-radius-xl);
+  box-shadow: var(--add-shadow);
+}
+
+.rms-add-modal .modal-dialog.modal-xl {
+  /* Wider on desktop (match edit if needed) */
+  --bs-modal-width: 1000px;
+  margin-left: 25rem;
+}
+
+/* Header: one line, spaced ends */
+.rms-add-modal .modal-header {
+  border: 0;
+  padding: 28px 32px 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.rms-add-modal .modal-header h3 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rms-add-modal .modal-header .btn { flex: 0 0 auto; }
+
+/* Body / Footer spacing */
+.rms-add-modal .modal-body {
+  padding: 16px 32px 8px 32px;
+}
+.rms-add-modal .modal-footer {
+  border: 0;
+  padding: 0 32px 28px 32px;
+}
+
+/* Labels */
+.rms-add-modal .form-label {
+  font-weight: 800;
+  color: var(--add-text);
+}
+
+/* Inputs */
+.rms-add-modal .form-control,
+.rms-add-modal .form-select,
+.rms-add-modal .input-group-text {
+  border-radius: var(--add-radius-lg);
+  border: 1px solid #e7e7e7;
+  background: #ebebeb;
+  color: var(--add-text);
+  height: 54px;
+}
+
+.rms-add-modal textarea.form-control {
+  height: 120px;
+}
+
+/* Help text */
+.rms-add-modal .form-text {
+  color: var(--add-muted);
+  font-size: 12px;
+}
+
+/* Buttons */
+.rms-add-modal .btn-add-primary {
+  background: var(--add-primary);
+  color: var(--add-primary-text);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-weight: 800;
+}
+.rms-add-modal .btn-add-primary:disabled { opacity: 0.7; }
+
+.rms-add-modal .btn-add-outline {
+  border-radius: 999px;
+  padding: 12px 22px;
+}

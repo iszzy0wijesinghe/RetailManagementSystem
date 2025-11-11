@@ -1,0 +1,150 @@
+:root{
+  --ink:#0f172a;
+  --ink-2:#1f2937;
+  --muted:#6b7280;
+  --bg:#f6f8fb;
+  --white:#ffffff;
+  --border:#e5e7eb;
+  --border-2:#d1d5db;
+  --ring:rgba(2,6,23,.07);
+
+  --ok:#16a34a;
+  --ok-ink:#065f46;
+  --warn:#ef4444;
+  --warn-ink:#7f1d1d;
+
+  --dark:#111827;
+}
+
+*{ box-sizing:border-box; }
+
+.catv2-page{
+  padding:26px;
+  background:linear-gradient(180deg,#f8fafc 0%,#eef2f7 100%);
+  min-height:100%;
+  color:var(--ink);
+}
+
+/* header */
+.catv2-header{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-bottom:14px;
+}
+.catv2-header h1{
+  margin:0; font-size:34px; font-weight:900; letter-spacing:.2px; color:var(--ink);
+}
+.header-actions{ display:flex; align-items:center; gap:10px; }
+
+/* dark pill button */
+.btn-dark{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 16px; border-radius:999px;
+  background:var(--dark); color:#fff; border:1px solid var(--dark);
+  font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.12);
+  cursor:pointer; transition:transform .04s ease, filter .15s ease;
+}
+.btn-dark:hover{ filter:brightness(.98); }
+.btn-dark:active{ transform:translateY(1px); }
+/* subtle variant used in search area */
+.btn-dark.ghost{ box-shadow:none; }
+
+/* toolbar (search + segmented) */
+.toolbar-card{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 10px 26px rgba(2,6,23,.06);
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+/* search */
+.search-wrap{
+  display:flex; align-items:center; gap:10px; flex:1 1 420px;
+  background:#fbfcff; border:1px solid var(--border); border-radius:16px;
+  padding:10px 12px;
+}
+.search-wrap:focus-within{
+  border-color:var(--border-2); box-shadow:0 0 0 8px var(--ring);
+}
+.search-wrap input{
+  flex:1; min-width:160px; border:none; outline:none; background:transparent;
+  color:var(--ink-2); font-size:14px;
+}
+.search-ico{ opacity:.55; }
+
+/* segmented control */
+.segmented{
+  display:flex; align-items:center; gap:6px;
+  background:#f1f5f9; border:1px solid var(--border); border-radius:999px;
+  padding:4px;
+}
+.seg{
+  appearance:none; cursor:pointer; border:none; background:transparent;
+  padding:8px 14px; border-radius:999px; font-weight:900; color:var(--ink-2);
+}
+.seg.active{
+  background:var(--dark); color:#fff; box-shadow:0 8px 18px rgba(0,0,0,.12);
+}
+
+/* table card */
+.table-card{
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; overflow:hidden;
+  box-shadow:0 16px 38px rgba(2,6,23,.06);
+}
+
+.catv2-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+}
+.catv2-table thead th{
+  background:#f2f5f9; color:#111827; text-align:left;
+  font-size:12px; text-transform:uppercase; letter-spacing:.06em;
+  padding:14px 16px; border-bottom:1px solid var(--border-2);
+}
+.catv2-table tbody td{
+  padding:14px 16px; border-bottom:1px solid var(--border);
+}
+.catv2-table tbody tr:nth-child(odd) td{ background:#fcfdff; }
+.catv2-table tbody tr:hover td{ background:#f8fafc; }
+
+/* ellipsis cell */
+.ellipsis{ max-width:520px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* status pills */
+.pill{
+  padding:8px 12px; font-weight:900; border-radius:999px; border:1px solid transparent;
+  display:inline-block; font-size:12px; white-space:nowrap;
+}
+.pill-ok{ background:#dcfce7; color:var(--ok-ink); border-color:#86efac; }
+.pill-warn{ background:#e2e8f0; color:#334155; border-color:#cbd5e1; }
+
+/* action buttons */
+.row-actions{ display:flex; gap:10px; }
+.btn-light{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 14px; border-radius:999px;
+  background:#fff; border:1px solid var(--border); color:var(--ink);
+  font-weight:800; cursor:pointer;
+}
+.btn-light:hover{ background:#f5f7fb; }
+
+.btn-danger{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid var(--warn); background:var(--warn); color:#fff; font-weight:800;
+  cursor:pointer;
+}
+.btn-danger[disabled]{ opacity:.6; cursor:not-allowed; }
+
+/* empty state */
+.empty{ text-align:center; padding:28px 12px; color:var(--muted); }
+.empty h4{ margin:0 0 4px; color:var(--ink); }
+
+/* responsive */
+@media (max-width: 720px){
+  .catv2-header h1{ font-size:26px; }
+  .seg{ padding:8px 12px; }
+}

@@ -1,0 +1,192 @@
+/* ===== Overlay ===== */
+.rms-modal__overlay{
+  position: fixed; inset: 0;
+  background: rgba(17,24,39,.50);
+  display: grid; place-items: center;
+  z-index: 9999;
+  animation: fadeIn .16s ease-out;
+}
+
+/* ===== Panel (compact) ===== */
+.rms-modal{
+  width: min(760px, 92vw);
+  background: #fff;
+  border: 1px solid #e9eef3;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(0,0,0,.20);
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto; /* body can shrink */
+  overflow: hidden;
+  position: relative;
+}
+.rms-modal--sm { width: min(820px, 94vw); } /* small bump if needed */
+.rms-modal--slide{ transform: translateY(10px); opacity: 0; animation: slideUp .20s ease-out forwards; }
+
+@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+@keyframes slideUp{ to{ transform:translateY(0); opacity:1 } }
+
+/* ===== Header / Footer ===== */
+/* Header / Footer — transparent + edge-aligned + wrapping */
+.rms-modal__header,
+.rms-modal__footer{
+  /* transparent background */
+  background: transparent;            /* was #f8fafc */
+  /* tidy spacing */
+  padding: 10px 14px;
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;     /* push ends to corners */
+  flex-wrap: wrap;                    /* wrap on small screens */
+  gap: 10px;                          /* breathing room when wrapped */
+  border: 0;                          /* remove any leftover borders */
+}
+
+/* Keep a subtle divider only if you want it */
+.rms-modal__header { border-bottom: 1px solid #eef2f7; }
+.rms-modal__footer { border-top: 1px solid #eef2f7; }
+
+/* Let the title auto-center between Back and Close when space allows */
+.rms-title{
+  font-weight: 800;
+  font-size: 14px;
+  flex: 1 1 auto;                     /* can grow/shrink */
+  text-align: center;                 /* centers when Back/Close at edges */
+  min-width: 180px;                   /* prevents too-narrow wrap squish */
+}
+
+/* Keep Back/Close compact; no background color overrides needed */
+.rms-back, .rms-close{
+  display: inline-grid;
+  place-items: center;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-weight: 700;
+}
+.rms-close svg{ width: 18px; height: 18px; }
+
+/* Footer right actions when they wrap — keep them grouped */
+.rms-footer-right{
+  display: flex;
+  gap: 8px;
+  margin-left: auto;                  /* stays at right edge when not wrapped */
+}
+
+
+/* ===== Body & meta ===== */
+.rms-modal__body{
+  padding: 12px;
+  display:flex; flex-direction:column; gap:10px;
+  min-height: 0; /* critical for inner scroller */
+}
+.rms-order-meta{
+  display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:#334155;
+}
+
+/* ===== Table wrapper (the ONLY scroller) ===== */
+.rms-table-wrap{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  border:1px solid #eef2f7; border-radius:12px;
+}
+
+/* ===== Table (Bootstrap-free) ===== */
+.rms-table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed; /* consistent column widths */
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.rms-table thead th{
+  position: sticky; top: 0; z-index: 1;
+  background:#f8fafc;
+  border-bottom:1px solid #eef2f7;
+  font-weight:800;
+  padding:10px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.rms-table tbody td{
+  padding:10px 12px;
+  border-top:1px solid #f3f4f6;
+  background: transparent !important;
+  vertical-align: middle;
+  line-height: 1.35;
+}
+
+.rms-table tbody{
+  overflow-y: scroll;
+}
+
+/* zebra + hover */
+.rms-table tbody tr:nth-child(odd){ background:#fcfcff; }
+.rms-table tbody tr:hover{ background:#f7fafc; }
+
+/* alignment helpers */
+.is-right{ text-align: right; }
+.is-center{ text-align: center; }
+
+/* truncation */
+.truncate{
+  background-color: transparent;
+  display: block;
+  max-width: 340px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Chips & buttons (Bootstrap-free) ===== */
+.chip{
+  display:inline-flex; align-items:center; gap:6px; padding:6px 10px;
+  border-radius:999px; font-weight:800; border:1px solid #e5e7eb; background:#fff;
+}
+.chip--ok{ background:#ecfdf5; color:#16a34a; border-color:#bbf7d0; }
+.chip--warn{ background:#fff1f2; color:#b91c1c; border-color:#fecaca; }
+
+.btn-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:9px 12px; border-radius:12px; font-weight:800;
+  border:1px solid #d0d5dd; background:#fff;
+  transition:background .15s, box-shadow .15s, border-color .15s;
+  cursor: pointer;
+}
+.btn-chip:hover{ background:#f7f7fb; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.btn-chip--danger{ color:#b42318; border-color:#f1b5b8; background:#fff5f5; }
+.btn-chip--secondary{ background:#111827; color:#fff; border-color:#111827; }
+
+/* ===== Loading ===== */
+.rms-loading{
+  padding: 12px;
+  text-align: center;
+  color: #475569;
+}
+
+/* ===== Mobile ===== */
+@media (max-width:640px){
+  .rms-modal{ width:96vw; max-height:86vh; }
+  .truncate{ max-width:220px; }
+}
+
+
+.rms-table tbody td .cell-scroll{
+  max-width: 340px;      /* tweak as you like */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.rms-table tbody td .cell-scroll::-webkit-scrollbar{ height: 8px; }
+.rms-table tbody td .cell-scroll::-webkit-scrollbar-thumb{
+  background: #d4d8de; border-radius: 8px;
+}

@@ -1,0 +1,61 @@
+/* identical look & overlay for edit modal */
+.cat-modal__overlay{
+  position:fixed; inset:0; z-index:2147483000;
+  background:rgba(15,23,42,.6);
+  display:grid; place-items:center;
+  -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
+}
+
+.cat-modal{
+  width:min(560px, calc(100% - 32px));
+  background:#fff; border:1px solid #e5e7eb; border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.2);
+  display:flex; flex-direction:column;
+  max-height:min(86vh, 900px); overflow:hidden;
+}
+
+.cat-modal__head{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 18px; border-bottom:1px solid #eef2f7;
+}
+.cat-modal__head h3{ margin:0; font-size:18px; font-weight:800; color:#111827; }
+
+.cat-modal__body{
+  padding:16px 18px;
+  display:grid; grid-template-columns:180px 1fr; gap:10px 14px;
+  overflow:auto;
+}
+
+.lbl{ align-self:center; font-weight:600; color:#334155; }
+.inp{
+  padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px; outline:none;
+}
+.inp:focus{ border-color:#111827; box-shadow:0 0 0 4px rgba(17,24,39,.08); }
+.is-invalid{ border-color:#ef4444; }
+.err{ color:#b91c1c; font-size:12px; grid-column:2 / 3; margin-top:-6px; }
+
+.alert{ grid-column:1 / -1; padding:10px 12px; border-radius:10px; border:1px solid #fecaca; background:#fee2e2; color:#7f1d1d; }
+.loading{ grid-column:1 / -1; color:#334155; }
+
+.cat-modal__foot{
+  display:flex; justify-content:flex-end; gap:12px;
+  padding:12px 18px; border-top:1px solid #eef2f7;
+}
+
+.icon-btn{
+  border:none; background:transparent; font-size:22px; line-height:1; cursor:pointer;
+}
+
+.btn{
+  padding:10px 14px; border:1px solid #e5e7eb; background:#fff; border-radius:10px; font-weight:600; cursor:pointer;
+}
+.btn:hover{ background:#f8fafc; }
+.btn--primary{
+  border:none; background:#111827; color:#fff; font-weight:700;
+}
+.btn--primary[disabled]{ opacity:.6; cursor:not-allowed; }
+
+@media (max-width:520px){
+  .cat-modal__body{ grid-template-columns:1fr; }
+  .lbl{ align-self:auto; }
+}

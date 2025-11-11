@@ -1,0 +1,85 @@
+/* src/features/auth/login.css */
+:root{
+  --bg:#f3f3f3;
+  --card:#ececec;
+  --text:#0b0b0b;
+  --muted:#6b6b6b;
+  --accent:#000;
+  --radius:32px;
+}
+
+html,body,#root{height:100%}
+body{background:#fff;color:var(--text);font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+
+.login-wrap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:#ffffff;
+}
+
+.login-card{
+  width:min(1100px,96vw);
+  background:#f1f1f1;
+  border-radius:24px;
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.08);
+}
+
+.login-left{
+  padding:56px 56px 56px 64px;
+  display:flex;flex-direction:column;gap:40px;
+}
+
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-mark{
+  width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;
+  font-size:24px;font-weight:900;box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+.brand-text{line-height:1}
+.brand-name{font-weight:900;font-size:28px;letter-spacing:.2px;}
+.brand-sub{font-size:12px;font-weight:800;opacity:.6;margin-top:-4px;}
+
+.welcome .hello{font-size:24px;font-weight:800;margin-bottom:0px;}
+.welcome .title{display:flex;flex-direction:column;gap:0px;}
+.welcome .title span:first-child{font-size:56px;font-weight:900; margin-bottom: -1rem;}
+.welcome .title span:last-child{font-size:72px;font-weight:900;}
+
+.login-right{
+  padding:56px;
+  display:grid;place-items:center;
+}
+.form{width:100%;max-width:420px;display:flex;flex-direction:column;gap:14px;}
+.label{font-weight:800;}
+.input{
+  height:52px;border-radius:999px;border:0;background:#ddd;padding:0 18px;outline:0;
+}
+.btn-primary{
+  margin-top:10px;height:56px;border-radius:999px;border:0;background:#000;color:#fff;font-weight:900;
+}
+.note{margin-top:16px;text-align:center;color:#333;font-weight:700;}
+.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:10px 12px;font-weight:700;}
+
+@media (max-width:980px){
+  .login-card{grid-template-columns:1fr}
+  .login-left{order:2}
+  .login-right{order:1}
+}
+
+
+.sb__brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px 18px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+.sb__logo{
+  width: 400px; height: 44px; object-fit: contain; flex: 0 0 36px;
+  
+  
+}

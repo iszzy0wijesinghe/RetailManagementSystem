@@ -1,0 +1,406 @@
+/* ---------- Scope to this page only ---------- */
+.rms-uber.product-list {
+    background: transparent;
+    color: var(--rms-text);
+
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    /* Fill the layout__content area exactly */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    /* Ensure inner scroller can shrink */
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* ---------- Header row ---------- */
+.rms-uber .page-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.rms-uber .page-title {
+    font-weight: 900;
+    font-size: clamp(22px, 2.4vw, 32px);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+/* ---------- Primary button ---------- */
+.rms-uber .btn-primary-uber {
+    background: var(--rms-primary);
+    color: var(--rms-primary-contrast);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+}
+
+.rms-uber .btn-primary-uber:disabled {
+    opacity: .75
+}
+
+/* ---------- Cards ---------- */
+/* IMPORTANT: remove overflow:hidden here so child .table-scroll can scroll */
+.rms-uber .card {
+    border: 1px solid var(--rms-line);
+    border-radius: var(--rms-radius-lg);
+    box-shadow: var(--rms-shadow);
+    
+}
+
+/* ---------- Filter card ---------- */
+.rms-uber .filters .form-control,
+.rms-uber .filters .form-select,
+.rms-uber .filters .input-group-text,
+.rms-uber .filters .btn {
+    border-radius: 14px
+}
+
+
+
+/* ---------- Table container (only this scrolls) ---------- */
+.rms-uber .card--table {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    /* take remaining vertical space */
+    min-height: 0;
+    /* critical */
+    border-radius: 1rem;
+    
+}
+
+
+
+.rms-uber .table-scroll {
+    flex: 1 1 0%;
+    /* ensures it actually grows and can scroll */
+    max-height: calc(100dvh - var(--rms-shell-top, 0px) - var(--rms-shell-bottom, 0px) - 180px);
+    overflow: auto;
+    /* the ONLY scroller */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    /* iOS momentum */
+
+}
+
+
+
+/* ---------- Subtle scrollbar ---------- */
+.rms-uber .table-scroll::-webkit-scrollbar {
+    height: 10px;
+    width: 10px
+}
+
+.rms-uber .table-scroll::-webkit-scrollbar-thumb {
+    background: #d5d7db;
+    border-radius: 8px
+}
+
+/* ---------- Table polish ---------- */
+.rms-uber table.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: .96rem;
+}
+
+/* ---------- Sticky header ---------- */
+.rms-uber thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #fafbfc;
+    border-bottom: 1px solid var(--rms-line);
+    font-weight: 800;
+}
+
+.rms-uber thead {
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .03)
+}
+
+/* ---------- Rows: zebra + hover ---------- */
+.rms-uber tbody tr:nth-child(odd) {
+    background: #fcfcfd
+}
+
+.rms-uber tbody tr:hover {
+    background: #f4f6f8
+}
+
+/* ---------- Cells ---------- */
+.rms-uber th,
+.rms-uber td {
+    padding: 12px 14px;
+    vertical-align: middle;
+    border-top: 1px solid #f0f1f3;
+}
+
+/* ---------- Sticky first column (ID) ---------- */
+.rms-uber .sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: inherit;
+    box-shadow: 2px 0 0 rgba(0, 0, 0, .03);
+}
+
+.table.products-table th:nth-child(3),
+.table.products-table td:nth-child(3) {
+  /* Name column: allow long names to truncate nicely */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Name truncation ---------- */
+.rms-uber .truncate {
+    display: inline-block;
+    max-width: 420px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ---------- Action column ---------- */
+.rms-uber .action-col {
+    width: 132px;
+    text-align: center;
+    white-space: nowrap
+}
+
+/* ---------- Pills ---------- */
+.rms-uber .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 800;
+    border: 1px solid transparent;
+}
+
+.rms-uber .chip--ok {
+    background: var(--rms-success-bg);
+    color: var(--rms-success);
+    border-color: #21a05733
+}
+
+.rms-uber .chip--warn {
+    background: var(--rms-danger-bg);
+    color: var(--rms-danger);
+    border-color: #cc3d3d33
+}
+
+/* ---------- Icon buttons (ghosty) ---------- */
+.rms-uber .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 12px;
+}
+
+.rms-uber .icon-btn svg {
+    width: 16px;
+    height: 16px
+}
+
+
+.btn-primary1-uber {
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  transition: background .18s, transform .06s;
+}
+.btn-primary1-uber:hover {
+  background: #575757;
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+.btn-primary1-uber:active {
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+/* ===== Pretty action chips (exact classes you use) ===== */
+.rms-uber .btn-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;               /* soft pill */
+  font-weight:700;
+  line-height:1;
+  border:1px solid transparent;
+  background:#fff;
+  color:#111;
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.04),
+    0 1px 2px rgba(0,0,0,.06);
+  transition:transform .06s ease,
+             background .18s ease,
+             border-color .18s ease,
+             box-shadow .18s ease,
+             color .18s ease;
+  cursor:pointer;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.rms-uber .btn-chip svg{ width:16px; height:16px; }
+
+/* Neutral/Secondary (Edit) */
+.rms-uber .btn-chip--secondary{
+  background:#ffffff;
+  color:#0f172a;                     /* slate-900 */
+  border-color:#e5e7eb;              /* light border */
+}
+.rms-uber .btn-chip--secondary:hover{
+  background:#f8fafc;                /* subtle hover */
+  border-color:#d1d5db;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.rms-uber .btn-chip--secondary:active{
+  transform:translateY(1px);
+}
+
+/* Danger (Delete) — solid, high contrast */
+.rms-uber .btn-chip--danger{
+  background:#ef4444;                /* red-500 */
+  color:#fff;
+  border-color:#ef4444;
+  box-shadow:
+    0 1px 0 rgba(239,68,68,.4),
+    0 6px 16px rgba(239,68,68,.25);
+}
+.rms-uber .btn-chip--danger:hover{
+  background:#dc2626;                /* red-600 */
+  border-color:#dc2626;
+  box-shadow:
+    0 1px 0 rgba(220,38,38,.5),
+    0 8px 20px rgba(220,38,38,.35);
+}
+.rms-uber .btn-chip--danger:active{
+  transform:translateY(1px);
+}
+
+/* Accessible focus rings */
+.rms-uber .btn-chip:focus-visible{
+  outline:none;
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,.25),
+    0 1px 2px rgba(0,0,0,.08);
+}
+.rms-uber .btn-chip--danger:focus-visible{
+  box-shadow:
+    0 0 0 3px rgba(239,68,68,.35),
+    0 1px 2px rgba(0,0,0,.08);
+}
+
+/* Disabled */
+.rms-uber .btn-chip:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+/* Optional small size */
+.rms-uber .btn-chip--sm{ padding:8px 12px; }
+
+
+
+
+/* --- Softer card + controls --- */
+.rms-uber .card.filters { border-radius: 18px; }
+.rms-uber .card.filters .card-body { padding: 16px; }
+.rms-uber .form-select, .rms-uber .form-control { border-radius: 14px; }
+
+/* --- Search area layout --- */
+.rms-uber .rms-search{
+  display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+}
+
+/* --- Google/YouTube-style search bar --- */
+.rms-uber .rms-search__bar{
+  flex:1 1 520px; min-width:260px;
+  display:flex; align-items:center; gap:10px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius: 999px;                    /* <-- big pill radius */
+  padding: 8px 8px 8px 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.rms-uber .rms-search__icon{ width:18px; height:18px; color:#64748b; }
+.rms-uber .rms-search__input{
+  flex:1 1 auto; border:0; outline:0; background:transparent;
+  font: inherit; color:#0f172a;
+  padding: 6px 0;
+}
+.rms-uber .rms-search__input::placeholder{ color:#94a3b8; }
+.rms-uber .rms-search__clear{
+  display:inline-grid; place-items:center;
+  width:28px; height:28px; border:0; background:transparent; color:#64748b;
+  border-radius:999px; cursor:pointer;
+}
+.rms-uber .rms-search__clear:hover{ background:#f1f5f9; color:#0f172a; }
+.rms-uber .rms-search__clear svg{ width:16px; height:16px; }
+
+.rms-uber .rms-search__submit{
+  display:inline-flex; align-items:center; gap:8px;
+  border:0; cursor:pointer; font-weight:700;
+  background:#111; color:#fff;
+  border-radius: 999px;                    /* <-- big pill radius */
+  padding: 10px 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  transition: transform .06s ease, background .18s ease, box-shadow .18s ease;
+}
+.rms-uber .rms-search__submit:hover{
+  background:#000; transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.22);
+}
+.rms-uber .rms-search__submit:active{ transform: translateY(0); }
+.rms-uber .rms-search__submit svg{ width:16px; height:16px; }
+
+/* Hide "Search" label on very small screens */
+@media (max-width: 480px){
+  .rms-uber .hide-sm{ display:none; }
+}
+
+/* --- Segmented filter (pill switch) --- */
+.rms-uber .rms-segment{
+  display:inline-flex; align-items:center; gap:4px;
+  background:#f1f5f9; border:1px solid #e2e8f0;
+  border-radius: 999px; padding: 4px;
+}
+.rms-uber .rms-segment__btn{
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  padding: 8px 12px; border-radius:999px; font-weight:700; color:#334155;
+  transition: background .18s ease, color .18s ease, transform .06s ease;
+}
+.rms-uber .rms-segment__btn:hover{ background:#e2e8f0; color:#0f172a; }
+.rms-uber .rms-segment__btn.is-active{
+  background:#111; color:#fff; box-shadow: 0 4px 12px rgba(0,0,0,.18);
+}
+.rms-uber .rms-segment__btn:active{ transform: translateY(1px); }

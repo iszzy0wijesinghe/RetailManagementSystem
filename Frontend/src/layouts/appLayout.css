@@ -1,0 +1,21 @@
+.layout{
+  display:grid;
+  grid-template-columns:270px 1fr;
+  height:100dvh;            /* hard cap to viewport */
+  background:#f5f5f5;
+  overflow:hidden;          /* prevent document scroll */
+}
+.layout__main{
+  display:flex;
+  flex-direction:column;
+  min-height:0;             /* critical for inner scrollers */
+  overflow:hidden;
+}
+.layout__content{
+  display:flex;             /* page wrappers can flex inside */
+  flex-direction:column;
+  flex:1 1 auto;
+  min-height:0;             /* allows inner .table-scroll to size */
+  overflow:hidden;          /* page-level overflow clipped */
+  padding:20px 24px 32px;
+}

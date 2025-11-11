@@ -1,0 +1,211 @@
+/* src/features/discounts/pages/DiscountsPage.css */
+body {
+}
+
+/* Page header */
+.disc-page .disc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.disc-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(22px, 2.4vw, 32px);
+  letter-spacing: -0.02em;
+}
+.disc-actions {
+  display: inline-flex;
+  gap: 8px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+.card-body {
+  padding: 12px;
+  
+}
+.card--table .card-body {
+  padding: 0;
+  
+}
+
+/* ───────────────── Scrollable table wrapper ───────────────── */
+.disc-table-wrap {
+  position: relative;
+  max-height: 73vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  background: #fff; /* opaque background */
+  padding: 8px;
+}
+
+/* If you need horizontal scroll too, toggle this class from JSX */
+.disc-table-wrap.is-x-scroll {
+  overflow-x: auto;
+}
+
+/* Pretty scrollbar */
+.disc-table-wrap::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.disc-table-wrap::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+.disc-table-wrap::-webkit-scrollbar-thumb {
+  background: #dbe2ea;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.disc-table-wrap:hover::-webkit-scrollbar-thumb {
+  background: #c7d0db;
+  border: 2px solid transparent;
+}
+.disc-table-wrap {
+  scrollbar-width: thin;
+  scrollbar-color: #c7d0db transparent;
+} /* Firefox */
+
+/* Table */
+.table tbody {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: give the whole table a white base so zebra stripes don't show under the header gap */
+.table {
+  background: #fff;
+}
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5; /* higher than tbody rows */
+}
+
+/* Opaque header cells + a bottom divider/shadow so rows don't bleed through */
+.table thead th {
+  background: #f8fafc; /* must be opaque */
+  box-shadow: 0 1px 0 #eef2f7; /* crisp bottom edge */
+  /* keep your existing styles: padding, font-weight, etc. */
+}
+.table td {
+  padding: 12px;
+  border-top: 1px solid #f3f4f6;
+  vertical-align: middle;
+  background: transparent;
+}
+.table tbody tr:nth-child(odd) {
+  background: #fcfcff;
+}
+.table tbody tr:hover {
+  background: #f7fafc;
+}
+
+/* Optional: rounded top corners on header row */
+.table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+.table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Text helpers */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Buttons (chips) */
+.btn-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  border: 1px solid #d0d5dd;
+  background: #fff;
+}
+.btn-chip--secondary {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+.btn-chip--secondary:hover {
+  background: #6f6f6f;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+/* Filters row */
+.disc-filters {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.disc-total {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+/* Search */
+.rms-search__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 6px 6px 6px 40px;
+  background: #fff;
+}
+.rms-search__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 0.7;
+}
+.rms-search__input {
+  border: 0;
+  outline: 0;
+  flex: 1;
+  background: transparent;
+}
+.rms-search__submit {
+  border-radius: 999px;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-weight: 800;
+}
+
+/* Pager */
+.disc-pager {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.disc-pageinfo {
+  padding: 8px 12px;
+}

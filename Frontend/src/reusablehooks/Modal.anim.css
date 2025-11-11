@@ -1,0 +1,66 @@
+/* ===== Modal animation shell (framework-agnostic) ===== */
+.rms-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    /* above page */
+    display: grid;
+    place-items: center;
+}
+
+.rms-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity 220ms ease;
+}
+
+.rms-modal__dialog {
+    position: relative;
+    width: min(960px, 92vw);
+    max-height: 88vh;
+    overflow: hidden;
+    border-radius: 24px;
+    /* nicer rounded corners */
+    transform: translateY(8px) scale(.98);
+    opacity: 0;
+    transition: transform 220ms cubic-bezier(.2, .8, .2, 1),
+        opacity 220ms ease;
+}
+
+/* ENTER state */
+.rms-modal.is-enter .rms-modal__backdrop {
+    opacity: 1;
+}
+
+.rms-modal.is-enter .rms-modal__dialog {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* EXIT state */
+.rms-modal.is-exit .rms-modal__backdrop {
+    opacity: 0;
+}
+
+.rms-modal.is-exit .rms-modal__dialog {
+    transform: translateY(8px) scale(.98);
+    opacity: 0;
+}
+
+/* If your modal already has a styled .modal-content inside, keep it. */
+.rms-modal .modal-content {
+    border: 0;
+    border-radius: 24px;
+    /* sync corners with dialog */
+}
+
+
+.rms-modal__dialog {
+    will-change: transform, opacity;
+}
+
+.rms-modal__backdrop {
+    will-change: opacity, backdrop-filter;
+}

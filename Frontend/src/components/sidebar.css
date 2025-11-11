@@ -1,0 +1,96 @@
+/* Sidebar base */
+.sb{
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  width: 270px;
+  min-height: 100dvh;
+  background: #0f172a;             /* slate-900 */
+  color: #e5e7eb;                   /* slate-200 */
+  display: flex;
+  flex-direction: column;
+  padding: 16px 14px;
+}
+
+/* Brand */
+.sb__brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px 18px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+.sb__logo{
+  width: 400px; height: 44px; object-fit: contain; flex: 0 0 36px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+  
+}
+.sb__brandText{ display: flex; flex-direction: column; line-height: 1.1; }
+.sb__brandTitle{ font-weight: 700; font-size: 18px; letter-spacing: .2px; color: #fff; }
+.sb__brandSub{ font-weight: 600; font-size: 11px; color: #cbd5e1; }
+
+/* Nav area */
+.sb__nav{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+/* Links (remove underline, improve feel) */
+.sb__link{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 12px;
+  border-radius: 12px;
+  color: #e5e7eb;
+  text-decoration: none;            /* ← no underline */
+  font-weight: 600;
+  line-height: 1;
+  transition: background .18s ease, color .18s ease, transform .06s ease;
+  margin-top: 0.5rem;
+}
+.sb__link:hover{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+.sb__link:active{
+  transform: translateY(1px);
+}
+
+/* Active state */
+.sb__link.is-active{
+  background: #1e293b;             /* slate-800 */
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* Icons */
+.sb__icon{
+  display: inline-grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  color: #94a3b8;                   /* slate-400 */
+}
+.sb__link:hover .sb__icon,
+.sb__link.is-active .sb__icon{
+  color: #fff;
+}
+.sb__icon > i{
+  font-size: 18px;                  /* Flaticon UIcons size */
+  line-height: 1;
+}
+
+/* Footer */
+.sb__footer{
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.sb__logout{
+  color: #fecaca;                   /* soft red text */
+}
+.sb__logout:hover{
+  background: rgba(239, 68, 68, .18);
+  color: #fff;
+}

@@ -1,0 +1,5 @@
+.tb{height:64px;background:#fff;border-bottom:1px solid #eaeaea;display:flex;align-items:center;justify-content:space-between;padding:0 20px;position:sticky;top:0;z-index:10}
+.tb__title{font-size:22px;font-weight:900}
+.tb__actions{display:flex;align-items:center;gap:10px}
+.tb__search{height:36px;width:260px;border:1px solid #e3e3e3;border-radius:20px;padding:0 14px}
+.tb__search:focus{border-color:#000}

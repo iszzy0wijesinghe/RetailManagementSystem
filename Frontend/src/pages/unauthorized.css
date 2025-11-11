@@ -1,0 +1,71 @@
+/* src/features/auth/unauthorized.css */
+.unauth-wrap {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+}
+.unauth-cards {
+  width: 100%;
+  text-align: center;
+}
+
+.unauth-title {
+  margin: 0 0 6px;
+}
+.unauth-sub {
+  margin: 0 0 20px;
+  color: #666;
+}
+.unauth-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.btn-primary {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:disabled { opacity: .6; cursor: default; }
+.btn-link {
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #111827;
+  text-decoration: none;
+  background: #f3f4f6;
+}
+
+
+
+/* lottie */
+.unauth-wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.unauth-anim {
+  width: 450px;
+  max-width: 100%;
+  margin: 8px auto 4px;
+}
+.unauth-title {
+  font-size: 28px;
+  margin: 8px 0 4px;
+}
+.unauth-sub {
+  color: #6b7280;
+  margin: 0 0 16px;
+}
+.btn-primary {
+  background: #111827;
+  color: #fff;
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-primary:disabled { opacity: .6; cursor: not-allowed; }

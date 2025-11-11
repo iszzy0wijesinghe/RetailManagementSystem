@@ -1,0 +1,29 @@
+/* src/components/errors/error-pages.css */
+.err-wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  padding: 24px;
+}
+.err-card {
+  width: 100%;
+  max-width: 720px;
+ 
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  
+}
+.err-anim { width: 500px; margin: 0 auto 8px; }
+.err-title { color: #000000; margin: 6px 0 4px; font-size: 28px; font-weight: 700; }
+.err-sub { color: #9fb0d2; margin: 0 0 18px; }
+.err-actions { display: flex; gap: 10px; justify-content: center; }
+.btn-primary {
+  padding: 10px 16px; border-radius: 10px; border: none; cursor: pointer;
+  background: #000000; color: #fff; font-weight: 600;
+}
+.btn-ghost {
+  padding: 10px 16px; border-radius: 10px; cursor: pointer;
+  background: transparent; color: #c9d6ff; border: 1px solid rgba(255,255,255,0.15);
+}
