@@ -68,7 +68,7 @@ RMS/
       │  └─ main.tsx                    # Entry point
       ├─ index.html
       └─ vite.config.ts
-
+```
 
 ---
 
