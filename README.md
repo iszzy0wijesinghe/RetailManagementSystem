@@ -41,32 +41,33 @@ It intentionally omits production-grade elements such as:
 
 ## 🗂️ Project Structure
 
+```plaintext
 RMS/
-├─ backend/ # ASP.NET Core API
-│ ├─ RetailManagementSystem.sln
-│ ├─ RetailManagementSystem/
-│ │ ├─ Controllers/ # API controllers
-│ │ ├─ Domain/ # Entity models
-│ │ ├─ Dtos/ # Data transfer objects
-│ │ ├─ Data/ # DbContext & configuration
-│ │ ├─ Services/ # Business logic & helpers
-│ │ ├─ Program.cs
-│ │ ├─ appsettings.json
-│ │ └─ Migrations/ # EF Core migrations
+├─ backend/                             # ASP.NET Core API
+│  ├─ RetailManagementSystem.sln
+│  ├─ RetailManagementSystem/
+│  │  ├─ Controllers/                   # API controllers
+│  │  ├─ Domain/                        # Entity models
+│  │  ├─ Dtos/                          # Data transfer objects
+│  │  ├─ Data/                          # DbContext & configuration
+│  │  ├─ Services/                      # Business logic & helpers
+│  │  ├─ Program.cs
+│  │  ├─ appsettings.json
+│  │  └─ Migrations/                    # EF Core migrations
 │
-└─ frontend/ # React application
-└─ fr-rms-ui/
-├─ src/
-│ ├─ features/
-│ │ ├─ products/ # Product & category UI
-│ │ ├─ inventory/ # Inventory view
-│ │ ├─ orders/ # POS module
-│ │ ├─ discounts/ # Discounts, coupons
-│ │ └─ auth/ # Login, registration
-│ ├─ app/ # Redux store, API setup
-│ └─ main.tsx # Entry point
-├─ index.html
-└─ vite.config.ts
+└─ frontend/                            # React application
+   └─ fr-rms-ui/
+      ├─ src/
+      │  ├─ features/
+      │  │  ├─ products/                # Product & category UI
+      │  │  ├─ inventory/               # Inventory view
+      │  │  ├─ orders/                  # POS module
+      │  │  ├─ discounts/               # Discounts, coupons
+      │  │  └─ auth/                    # Login, registration
+      │  ├─ app/                        # Redux store, API setup
+      │  └─ main.tsx                    # Entry point
+      ├─ index.html
+      └─ vite.config.ts
 
 
 ---
