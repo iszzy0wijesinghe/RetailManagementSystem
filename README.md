@@ -124,6 +124,6 @@ This project helps learners understand:
 ## ✨ Author
 
 **Isindu Wijesinghe**  
-📧 _Intern / Student Project — for educational purposes_  
+📧 _Student Project — for educational purposes_  
 🌐 [GitHub Profile](https://github.com/iszzy0wijesinghe)
 
