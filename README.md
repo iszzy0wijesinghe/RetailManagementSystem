@@ -19,3 +19,27 @@ Auth/Roles: Admin / Manager / Salesman (JWT auth, simplified)
 DB: SQL Server (LocalDB or full SQL Server)
 
 🗂️ Project Structure (typical)
+RMS/
+├─ backend/                             # ASP.NET Core API
+│  ├─ RetailManagementSystem.sln
+│  ├─ RetailManagementSystem/
+│  │  ├─ Controllers/
+│  │  ├─ Domain/                        # Entities
+│  │  ├─ Dtos/
+│  │  ├─ Data/                # DbContext, config
+│  │  ├─ Services/
+│  │  ├─ Program.cs, appsettings.json
+│  │  └─ Migrations/
+└─ frontend/                            # React app
+   └─ fr-rms-ui/
+      ├─ src/
+      │  ├─ features/
+      │  │  ├─ products/
+      │  │  ├─ inventory/
+      │  │  ├─ orders/ (POS)
+      │  │  ├─ discounts/
+      │  │  └─ auth/
+      │  ├─ app/
+      │  └─ main.tsx
+      ├─ index.html
+      └─ vite.config.ts
